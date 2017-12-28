@@ -3,8 +3,8 @@
 /// Sidebar
 ////
 
-@import '../MobileNav/props';
 @import 'utilities/layout';
+@import 'components/MobileNav/props';
 
 .Sidebar {
   @include position-cover;

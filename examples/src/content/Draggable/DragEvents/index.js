@@ -14,9 +14,9 @@ function calcOffset(offset) {
   return offset * 2 * 0.5;
 }
 
-export default function BasicDragging() {
+export default function DragEvents() {
   const toggleClass = 'PillSwitch--isOn';
-  const containers = document.querySelectorAll('#BasicDragging .PillSwitch');
+  const containers = document.querySelectorAll('#DragEvents .PillSwitch');
 
   if (containers.length === 0) {
     return false;

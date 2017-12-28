@@ -4,13 +4,13 @@
 {% import 'components/Sidebar/Sidebar.html' as Sidebar %}
 {% import 'components/PageHeader/PageHeader.html' as PageHeader %}
 
-{% import 'content/Draggable/BasicDragging/BasicDragging.html' as BasicDragging %}
+{% import 'content/Draggable/DragEvents/DragEvents.html' as DragEvents %}
 
 {% set ViewAttrs = {
-  id: 'BasicDragging',
+  id: 'DragEvents',
   parent: 'Draggable',
-  child: 'Basic dragging',
-  subheading: '...'
+  child: 'Drag events',
+  subheading: 'You may not need to use any of the additional modules. Hook into any of Draggable’s events and write your own logic.'
 } %}
 
 {% block PageId %}{{ ViewAttrs.id }}{% endblock %}
@@ -25,5 +25,5 @@
 
 {% block main %}
   {{ PageHeader.render(ViewAttrs.parent, ViewAttrs.subheading) }}
-  {{ BasicDragging.render(ViewAttrs.id) }}
+  {{ DragEvents.render(ViewAttrs.id) }}
 {% endblock %}

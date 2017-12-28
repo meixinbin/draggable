@@ -3,10 +3,10 @@
 /// StackedList variants
 ////
 
-@import '../../styles/utilities/layout';
+@import 'utilities/layout';
 @import './props';
-@import '../Handle/props';
-@import '../Patterns/props';
+@import 'components/Handle/props';
+@import 'components/Patterns/props';
 
 ///
 /// Size variants

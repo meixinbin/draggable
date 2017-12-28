@@ -2,7 +2,7 @@
   "NavItems": [
     {
       "Draggable": [
-        "Basic dragging",
+        "Drag events",
         "Restrict axis"
       ]
     },

@@ -14,56 +14,56 @@
 
 ///
 /// Base components
-@import '../components/Page/Page';
-@import '../components/Svg/Svg';
-@import '../components/Link/Link';
-@import '../components/Heading/Heading';
+@import 'components/Page/Page';
+@import 'components/Svg/Svg';
+@import 'components/Link/Link';
+@import 'components/Heading/Heading';
 
 ///
 /// Sidebar components
-@import '../components/Sidebar/Sidebar';
-@import '../components/Navigation/Navigation';
-@import '../components/Hamburger/Hamburger';
-@import '../components/Brand/Brand';
+@import 'components/Sidebar/Sidebar';
+@import 'components/Navigation/Navigation';
+@import 'components/Hamburger/Hamburger';
+@import 'components/Brand/Brand';
 
 ///
 /// Example components
-@import '../components/Main/Main';
-@import '../components/PageHeader/PageHeader';
-@import '../components/Handle/DragHandle';
-@import '../components/Handle/NopeHandle';
-@import '../components/Patterns/Patterns';
+@import 'components/Main/Main';
+@import 'components/PageHeader/PageHeader';
+@import 'components/Handle/DragHandle';
+@import 'components/Handle/NopeHandle';
+@import 'components/Patterns/Patterns';
 
-@import '../components/Block/Block';
-@import '../components/Block/variants';
+@import 'components/Block/Block';
+@import 'components/Block/variants';
 
-@import '../components/PillSwitch/PillSwitch';
-@import '../components/PillSwitch/variants';
+@import 'components/PillSwitch/PillSwitch';
+@import 'components/PillSwitch/variants';
 
-@import '../components/Plate/Plate';
-@import '../components/Plate/variants';
+@import 'components/Plate/Plate';
+@import 'components/Plate/variants';
 
-@import '../components/StackedList/StackedList';
-@import '../components/StackedList/variants';
+@import 'components/StackedList/StackedList';
+@import 'components/StackedList/variants';
 
-@import '../components/PaperStack/PaperStack';
-@import '../components/PaperStack/variants';
+@import 'components/PaperStack/PaperStack';
+@import 'components/PaperStack/variants';
 
 ///
 /// Example content
-@import '../content/Home/Home';
+@import 'content/Home/Home';
 
-@import '../content/Draggable/BasicDragging/BasicDragging';
-// @import '../content/Draggable/RestrictAxis/RestrictAxis';
+@import 'content/Draggable/DragEvents/DragEvents';
+// @import 'content/Draggable/RestrictAxis/RestrictAxis';
 
-@import '../content/Droppable/OneAndOnly/OneAndOnly';
+@import 'content/Droppable/OneAndOnly/OneAndOnly';
 
-@import '../content/Sortable/SimpleList/SimpleList';
-@import '../content/Sortable/Transformed/Transformed';
-@import '../content/Sortable/MultipleContainers/MultipleContainers';
+@import 'content/Sortable/SimpleList/SimpleList';
+@import 'content/Sortable/Transformed/Transformed';
+@import 'content/Sortable/MultipleContainers/MultipleContainers';
 
-@import '../content/Swappable/FloatedLayout/FloatedLayout';
-@import '../content/Swappable/GridLayout/GridLayout';
+@import 'content/Swappable/FloatedLayout/FloatedLayout';
+@import 'content/Swappable/GridLayout/GridLayout';
 
-@import '../content/Plugins/Collidable/Collidable';
-@import '../content/Plugins/SwapAnimation/SwapAnimation';
+@import 'content/Plugins/Collidable/Collidable';
+@import 'content/Plugins/SwapAnimation/SwapAnimation';

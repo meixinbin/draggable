@@ -1,7 +1,7 @@
 import MobileNav from '../components/MobileNav';
 
 import Home from '../content/Home';
-import BasicDragging from '../content/Draggable/BasicDragging';
+import DragEvents from '../content/Draggable/DragEvents';
 // import RestrictAxis from '../content/Draggable/RestrictAxis';
 import OneAndOnly from '../content/Droppable/OneAndOnly';
 import SimpleList from '../content/Sortable/SimpleList';
@@ -20,7 +20,7 @@ if (navActivator) {
 
 // Initialize all examples
 Home();
-BasicDragging();
+DragEvents();
 // RestrictAxis();
 OneAndOnly();
 SimpleList();

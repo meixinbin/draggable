@@ -3,9 +3,9 @@
 /// Hamburger
 ////
 
+@import 'utilities/layout';
 @import './props';
 @import './keyframes';
-@import 'utilities/layout';
 
 .Hamburger {
   z-index: get-z-index(hamburger);

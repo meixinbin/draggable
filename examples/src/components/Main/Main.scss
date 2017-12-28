@@ -3,7 +3,7 @@
 /// Main
 ////
 
-@import '../MobileNav/props';
+@import 'components/MobileNav/props';
 
 .Main {
   padding: $mobile-nav-padding-top get-spacing(tight) get-spacing(looser);
