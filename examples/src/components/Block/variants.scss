@@ -8,7 +8,6 @@
 
 ///
 /// BlockLayout
-
 .BlockLayout--typeFlex,
 .BlockLayout--typeFloat {
   margin-top: -#{get-border(thin)};
@@ -63,7 +62,6 @@
 
 ///
 /// Block types
-
 .Block--typeShell {
   .BlockContent {
     color: get-color(coal, dark);
@@ -89,7 +87,6 @@
 
 ///
 /// Draggable Blocks
-
 .Block--isDraggable {
   cursor: get-cursor(drag);
 
@@ -150,7 +147,6 @@ span:hover {
 
 ///
 /// Droppable
-
 .BlockWrapper {
   position: relative;
 

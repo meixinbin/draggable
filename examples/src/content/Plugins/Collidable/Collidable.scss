@@ -33,7 +33,6 @@
 
   ///
   /// Obstacles
-
   .Block--item2,
   .Block--item3 {
     height: collidable(obstacle-height);
@@ -71,7 +70,6 @@
 
   ///
   /// Droppables
-
   .BlockWrapper:nth-child(1),
   .BlockWrapper:nth-child(4) {
     height: collidable(block-height);
@@ -108,7 +106,6 @@
 
   ///
   /// Walls
-
   .CollidableWall {
     position: absolute;
     background-color: get-color(coal, dark);

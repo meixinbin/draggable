@@ -10,7 +10,6 @@
 
 ///
 /// Size variants
-
 .StackedListWrapper--sizeMedium {
   .StackedListHeader {
     min-height: stacked-list-item(medium);
@@ -58,7 +57,6 @@
 ///
 /// Vertical scroll variant
 /// Not to be paired with --axisHorizontal
-
 .StackedListWrapper--hasScrollIndicator {
   &::after {
     content: '';
@@ -146,7 +144,6 @@
 ///
 /// Axis variant
 /// Has horizontal scrolling built-in
-
 .StackedListWrapper--axisHorizontal {
   display: flex;
   height: stacked-list-item();
@@ -249,7 +246,6 @@
 
 ///
 /// Draggable variant
-
 .StackedListItem--isDraggable {
   cursor: get-cursor(drag);
 

@@ -37,7 +37,6 @@ $stacked-list-item: (
 
 ///
 /// Mixins
-
 @mixin stacked-list-scroll-height($size: stacked-list-item(), $rows: 6) {
   height: ($size * $rows) - (get-border() * ($rows - 1));
 }

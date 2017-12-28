@@ -16,7 +16,7 @@ function calculatePlateScale(value, max, factor) {
   const step1 = Math.abs(value) / max;
   const step2 = step1 - step1 * factor;
 
-  return 1 - step2;
+  return 1 - step2; // step 3
 }
 
 export default class Plate {
@@ -27,13 +27,13 @@ export default class Plate {
       middle: wrapper.getElementsByClassName(Classes.middle)[0],
       top: wrapper.getElementsByClassName(Classes.top)[0],
     };
-    this.initialMousePosition = {
-      x: 0,
-      y: 0,
-    };
     this.threshold = {
       min: -27.2,
       max: 27.2,
+    };
+    this.initialMousePosition = {
+      x: 0,
+      y: 0,
     };
   }
 

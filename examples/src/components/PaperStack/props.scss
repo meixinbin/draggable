@@ -8,7 +8,6 @@ $paper-stack-item-count: 4;
 
 ///
 /// Size calc functions
-
 @function paper-stack-height($height, $spacing) {
   @return $height - (
     ($spacing / 2) * ($paper-stack-item-count - 1)
@@ -17,7 +16,6 @@ $paper-stack-item-count: 4;
 
 ///
 /// Style prop maps
-
 $paper-stack-item: (
   spacing: (
     base: get-spacing(),
@@ -99,7 +97,6 @@ $paper-stack: (
 
 ///
 /// Mixins
-
 @mixin paper-stack-item-offset($breakpoint: $threads-default-value) {
   $adjusted-top-offset: -(
     (paper-stack-item(width, $breakpoint) / $paper-stack-item-count) +

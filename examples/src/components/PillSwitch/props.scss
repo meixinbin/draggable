@@ -37,7 +37,6 @@ $pill-switch-data: (
 
 ///
 /// Mixins
-
 @mixin pill-switch-track-layout($breakpoint: 'base') {
   margin-top: -#{pill-switch(radius, $breakpoint)};
   margin-left: -#{pill-switch(track-width, $breakpoint) / 2};
