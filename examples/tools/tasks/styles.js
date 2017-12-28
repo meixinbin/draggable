@@ -14,7 +14,7 @@ export function styles() {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        includePaths: ['./node_modules', './src'],
+        includePaths: ['./src', './node_modules'],
       }).on('error', sass.logError),
     )
     .pipe(postcss())

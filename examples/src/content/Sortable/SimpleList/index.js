@@ -16,7 +16,7 @@ export default function SimpleList() {
     },
   });
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   sortable.on('drag:start', evt => {
     evt.originalSource.classList.add('StackedListItem--isCloned');
   });

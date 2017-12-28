@@ -16,7 +16,7 @@ export default function Transformed() {
     },
   });
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   sortable.on('drag:start', evt => {
     evt.originalSource.classList.add('PaperStackItem--isCloned');
   });

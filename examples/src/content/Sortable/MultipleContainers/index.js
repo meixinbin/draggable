@@ -16,7 +16,7 @@ export default function MultipleContainers() {
 
   let lastOverContainer;
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   sortable.on('drag:start', evt => {
     evt.originalSource.classList.add('StackedListItem--isCloned');
   });

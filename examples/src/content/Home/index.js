@@ -14,7 +14,7 @@ export default function Home() {
   });
   const plates = new Plate(container);
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   draggable.on('drag:start', evt => {
     plates.setThreshold();
     plates.setInitialMousePosition(evt.sensorEvent);

@@ -17,7 +17,7 @@ export default function OneAndOnly() {
 
   let droppableOrigin;
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   droppable.on('drag:start', evt => {
     droppableOrigin = evt.originalSource.parentNode.dataset.droppable;
   });

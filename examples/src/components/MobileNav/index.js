@@ -24,9 +24,12 @@ export default class MobileNav {
     this._setState();
     this.activator.addEventListener('click', this.toggle.bind(this));
 
-    window.addEventListener('resize', debounce(() => {
-      this._setState();
-    }, debounceDuration));
+    window.addEventListener(
+      'resize',
+      debounce(() => {
+        this._setState();
+      }, debounceDuration),
+    );
   }
 
   expand(widthExceeded = false) {
@@ -51,7 +54,7 @@ export default class MobileNav {
   }
 
   toggle() {
-    return (this.expanded) ? this.collapse() : this.expand();
+    return this.expanded ? this.collapse() : this.expand();
   }
 
   _setState() {
@@ -59,6 +62,6 @@ export default class MobileNav {
 
     // currently collapses when resizing within any mobile range...
     // I should update this to remain `expanded` when resizing within that range
-    return (windowWidth < MAX_WIDTH) ? this.collapse() : this.expand(true);
+    return windowWidth < MAX_WIDTH ? this.collapse() : this.expand(true);
   }
 }

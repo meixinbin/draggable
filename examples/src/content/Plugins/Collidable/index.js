@@ -19,7 +19,7 @@ export default function Collidable() {
     plugins: [Plugins.Collidable],
   });
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   droppable.on('collidable:in', ({collidingElement}) => {
     collidingElement.classList.add('isColliding');
   });

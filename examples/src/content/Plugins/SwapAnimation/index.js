@@ -16,7 +16,7 @@ export default function SwapAnimation() {
 
   // EXPERIMENT WITH MANAGING THE PLACED CLASS MYSELF
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   swappable.on('drag:start', evt => {
     // MAX WILL UPDATE THE LIB TO HAVE A NEW CLASS I CAN HOOK INTO
     evt.originalSource.classList.add('Block--isCloned');

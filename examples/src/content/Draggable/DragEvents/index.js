@@ -34,7 +34,7 @@ export default function DragEvents() {
   let headings;
   let headingText;
 
-  // --- Drag states --- //
+  // --- Draggable events --- //
   draggable.on('drag:start', evt => {
     initialMousePosition = {
       x: evt.sensorEvent.clientX,
