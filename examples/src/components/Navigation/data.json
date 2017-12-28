@@ -3,7 +3,7 @@
     {
       "Draggable": [
         "Basic dragging",
-        "Positioned"
+        "Restrict axis"
       ]
     },
     {

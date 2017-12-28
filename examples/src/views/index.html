@@ -8,7 +8,8 @@
 
 {% set ViewAttrs = {
   id: 'Home',
-  subheading: 'Draggable is a lightweight, responsive, modern drag and drop JavaScript library – the ideal choice for adding slick native-feeling drag and drop behaviour to your web apps.'
+  parent: 'Examples',
+  subheading: 'Draggable is a modern drag and drop JavaScript library. Lightweight, modular and accessible'
 } %}
 
 {% block PageId %}{{ ViewAttrs.id }}{% endblock %}
@@ -22,6 +23,6 @@
 {% endblock %}
 
 {% block main %}
-  {{ PageHeader.render('Draggable', ViewAttrs.subheading) }}
+  {{ PageHeader.render(ViewAttrs.parent, ViewAttrs.subheading) }}
   {{ Home.render(ViewAttrs.id) }}
 {% endblock %}

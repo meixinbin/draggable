@@ -1,6 +1,6 @@
 ////
 /// Content
-/// Colldable
+/// Collidable
 ////
 
 @import './props';
@@ -155,6 +155,13 @@
 
     @media screen and (min-width: get-breakpoint(tablet)) {
       width: get-border();
+    }
+  }
+
+  // Draggable
+  .draggable-mirror {
+    .BlockContent {
+      transform: scale(0.9);
     }
   }
 }

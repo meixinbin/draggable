@@ -1,7 +1,8 @@
 import {Droppable, Plugins} from '../../../scripts/vendor/draggable';
 
 export default function Collidable() {
-  const containers = document.querySelectorAll('#Collidable .BlockLayout');
+  const containerSelector = '#Collidable .BlockLayout';
+  const containers = document.querySelectorAll(containerSelector);
 
   if (containers.length === 0) {
     return false;
@@ -11,6 +12,7 @@ export default function Collidable() {
     draggable: '.Block--isDraggable',
     droppable: '.BlockWrapper--isDroppable',
     collidables: '.CollidableObstacle',
+    appendTo: containerSelector,
     mirror: {
       constrainDimensions: true,
     },

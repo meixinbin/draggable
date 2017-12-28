@@ -1,9 +1,11 @@
-{% import '../../components/Block/Block.html' as Block %}
+{% import '../../components/Plate/Plate.html' as Plate %}
 
 {% macro render(id) %}
   <section id="{{ id }}" class="{{ id }}">
-    <article class="BlockLayout BlockLayout--typeFlex">
-      <p>Hello and welcome</p>
+    <article class="PlateWrapper">
+      {{ Plate.render('Three', {level: 'Bottom', draggable: true}) }}
+      {{ Plate.render('Two',   {level: 'Middle', draggable: true}) }}
+      {{ Plate.render('One',   {heading: 'hello', level: 'Top', draggable: true}) }}
     </article>
   </section>
 {% endmacro %}

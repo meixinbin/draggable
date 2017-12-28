@@ -47,13 +47,14 @@
 @import '../components/StackedList/variants';
 
 @import '../components/PaperStack/PaperStack';
+@import '../components/PaperStack/variants';
 
 ///
 /// Example content
 @import '../content/Home/Home';
 
 @import '../content/Draggable/BasicDragging/BasicDragging';
-@import '../content/Draggable/Positioned/Positioned';
+// @import '../content/Draggable/RestrictAxis/RestrictAxis';
 
 @import '../content/Droppable/OneAndOnly/OneAndOnly';
 

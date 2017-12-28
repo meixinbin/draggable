@@ -4,13 +4,14 @@
 {% import 'components/Sidebar/Sidebar.html' as Sidebar %}
 {% import 'components/PageHeader/PageHeader.html' as PageHeader %}
 
-{% import 'content/Draggable/Positioned/Positioned.html' as Positioned %}
+{#
+{% import 'content/Draggable/RestrictAxis/RestrictAxis.html' as RestrictAxis %}
 
 {% set ViewAttrs = {
-  id: 'Positioned',
+  id: 'RestrictAxis',
   parent: 'Draggable',
-  child: 'Positioned',
-  subheading: 'Drag and drop are not mutually exclusive. Draggable events help you build any kind of custom interaction.'
+  child: 'Restrict axis',
+  subheading: '...'
 } %}
 
 {% block PageId %}{{ ViewAttrs.id }}{% endblock %}
@@ -25,5 +26,6 @@
 
 {% block main %}
   {{ PageHeader.render(ViewAttrs.parent, ViewAttrs.subheading) }}
-  {{ Positioned.render(ViewAttrs.id) }}
+  {{ RestrictAxis.render(ViewAttrs.id) }}
 {% endblock %}
+#}

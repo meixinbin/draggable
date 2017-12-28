@@ -67,7 +67,7 @@
 }
 
 ///
-/// Draggable layout
+/// Layout
 .PaperStackItem:nth-child(1n+2) {
   .PaperStackContent::after {
     content: '';
@@ -92,12 +92,6 @@
   }
 }
 
-.PaperStackItem--isCloned:first-child + .PaperStackItem {
-  .PaperStackContent::after {
-    content: none;
-  }
-}
-
 .PaperStackItem {
   @for $i from 1 through $paper-stack-item-count {
     &:nth-child(#{$i}) {
@@ -113,78 +107,5 @@
 
   @media screen and (min-width: get-breakpoint(desktop)) {
     @include paper-stack-item-offset(desktop);
-  }
-}
-
-///
-/// Draggable Items
-.PaperStackItem--isDraggable {
-  cursor: get-cursor(drag);
-
-  .PaperStackContent {
-    @include halftone-bg;
-    color: get-color(coal, dark);
-    background-color: white;
-    border-color: currentColor;
-    transition:
-      color get-duration(fast) get-easing(),
-      background-color get-duration(fast) get-easing(),
-      transform get-duration() get-easing();
-  }
-
-  // interaction
-  &:focus,
-  &:hover {
-    .PaperStackContent {
-      color: get-color(brand, blue);
-      transform: paper-stack-item(transform) translateY(get-spacing(tightest));
-
-      &::after {
-        transform: translateY(
-          -(get-spacing(tightest))
-        );
-      }
-    }
-  }
-
-/*
-  &:hover + .PaperStackItem .PaperStackContent::after {
-    transform: translateY(get-spacing(tightest));
-  }
-*/
-
-  &.draggable-source--is-dragging {
-    .PaperStackContent {
-      color: get-color(brand, blue);
-
-      @include halftone-bg-animated;
-    }
-  }
-
-  /*
-    &.draggable-source--placed {
-      .PaperStackContent::before {
-        @include position-cover;
-        content: '';
-        display: block;
-        background-color: get-color(brand, blue);
-        animation: test get-duration() get-easing() both;
-      }
-    }
-  */
-
-  &.draggable-mirror {
-    z-index: get-z-index(overlay);
-
-    .PaperStackContent {
-      color: white;
-      background-color: get-color(brand, blue);
-      border-color: get-color(brand, blue);
-      transform: paper-stack-item(transform) scale(1.05);
-
-      &::after {
-        content: none;
-      }
-    }
   }
 }
