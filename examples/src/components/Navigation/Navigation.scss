@@ -75,4 +75,9 @@
     pointer-events: none;
     color: get-color(purple);
   }
+
+  &.NavLink--isDisabled {
+    pointer-events: none;
+    color: get-color(coal, light);
+  }
 }

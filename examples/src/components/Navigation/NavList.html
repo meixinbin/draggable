@@ -16,9 +16,12 @@
         {% set linkClasses = (
           linkClasses.push('NavLink--isCurrent') if ViewAttrs.child == Link, linkClasses
         ) %}
+        {% if '~' in Link %}
+          {% set linkClasses = (linkClasses.push('NavLink--isDisabled'), linkClasses) %}
+        {% endif %}
 
         <li class="NavItem">
-          <a href="{{ linkHref + '.html' }}" class="{{ linkClasses | join(' ') | trim }}" title="See example: {{ Link }}">{{ Link }}</a>
+          <a href="{{ linkHref + '.html' }}" class="{{ linkClasses | join(' ') | trim }}" title="See example: {{ Link }}">{{ Link | replace('~', '') }}</a>
         </li>
       {% endfor %}
     </ul>

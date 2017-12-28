@@ -3,13 +3,13 @@
     {
       "Draggable": [
         "Drag events",
-        "Restrict axis"
+        "~Restrict axis"
       ]
     },
     {
       "Droppable": [
         "One and only",
-        "Capacity"
+        "~Capacity"
       ]
     },
     {
