@@ -4,13 +4,13 @@
 {% import 'components/Sidebar/Sidebar.html' as Sidebar %}
 {% import 'components/PageHeader/PageHeader.html' as PageHeader %}
 
-{% import 'content/Swappable/FloatedLayout/FloatedLayout.html' as FloatedLayout %}
+{% import 'content/Swappable/Floated/Floated.html' as Floated %}
 
 {% set ViewAttrs = {
-  id: 'FloatedLayout',
+  id: 'Floated',
   parent: 'Swappable',
-  child: 'Floated layout',
-  subheading: 'Maintaining layout while swapping direct children can be challenging. This example solves the problem using CSS nth-child and adjacent child rules.'
+  child: 'Floated',
+  subheading: 'Floated layouts can be solved exactly the same as with the Flexbox example.'
 } %}
 
 {% block PageId %}{{ ViewAttrs.id }}{% endblock %}
@@ -25,5 +25,5 @@
 
 {% block main %}
   {{ PageHeader.render(ViewAttrs.parent, ViewAttrs.subheading) }}
-  {{ FloatedLayout.render(ViewAttrs.id) }}
+  {{ Floated.render(ViewAttrs.id) }}
 {% endblock %}

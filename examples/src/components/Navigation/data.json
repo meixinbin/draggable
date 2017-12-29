@@ -21,7 +21,8 @@
     },
     {
       "Swappable": [
-        "Floated layout",
+        "Flexbox",
+        "Floated",
         "Grid layout"
       ]
     },
@@ -29,7 +30,7 @@
       "Plugins": [
         "Collidable",
         "Snappable",
-        "Swap Animation"
+        "~Swap Animation"
       ]
     }
   ]

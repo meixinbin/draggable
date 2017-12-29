@@ -1,4 +1,4 @@
-import {Swappable} from '../../../scripts/vendor/draggable';
+import {Sortable, Plugins} from '../../../scripts/vendor/draggable';
 
 export default function SwapAnimation() {
   const containers = document.querySelectorAll('#SwapAnimation .BlockLayout');
@@ -7,22 +7,27 @@ export default function SwapAnimation() {
     return false;
   }
 
-  const swappable = new Swappable(containers, {
+  const sortable = new Sortable(containers, {
     draggable: '.Block--isDraggable',
     mirror: {
       constrainDimensions: true,
     },
+    plugins: [Plugins.SwapAnimation],
+    swapAnimation: {
+      duration: 200,
+      easingFunction: 'ease-in-out',
+    },
   });
 
   // --- Draggable events --- //
-  swappable.on('drag:start', evt => {
+  sortable.on('drag:start', evt => {
     // MAX WILL UPDATE THE LIB TO HAVE A NEW CLASS I CAN HOOK INTO
     evt.originalSource.classList.add('Block--isCloned');
   });
 
-  swappable.on('drag:stop', evt => {
+  sortable.on('drag:stop', evt => {
     evt.originalSource.classList.remove('Block--isCloned');
   });
 
-  return swappable;
+  return sortable;
 }

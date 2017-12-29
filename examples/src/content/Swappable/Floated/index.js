@@ -1,7 +1,7 @@
 import {Swappable} from '../../../scripts/vendor/draggable';
 
-export default function FloatedLayout() {
-  const containers = document.querySelectorAll('#FloatedLayout .BlockLayout');
+export default function Floated() {
+  const containers = document.querySelectorAll('#Floated .BlockLayout');
 
   if (containers.length === 0) {
     return false;

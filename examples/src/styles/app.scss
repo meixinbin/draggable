@@ -59,12 +59,14 @@
 // @import 'content/Draggable/RestrictAxis/RestrictAxis';
 
 @import 'content/Droppable/OneAndOnly/OneAndOnly';
+// @import 'content/Droppable/Capacity/Capacity';
 
 @import 'content/Sortable/SimpleList/SimpleList';
 @import 'content/Sortable/Transformed/Transformed';
 @import 'content/Sortable/MultipleContainers/MultipleContainers';
 
-@import 'content/Swappable/FloatedLayout/FloatedLayout';
+@import 'content/Swappable/Flexbox/Flexbox';
+@import 'content/Swappable/Floated/Floated';
 @import 'content/Swappable/GridLayout/GridLayout';
 
 @import 'content/Plugins/Collidable/Collidable';

@@ -9,12 +9,14 @@ export default function Snappable() {
 
   const sortable = new Sortable(containers, {
     draggable: '.Block--isDraggable',
+    mirror: {
+      constrainDimensions: true,
+    },
+    plugins: [Plugins.SwapAnimation],
     swapAnimation: {
       duration: 200,
       easingFunction: 'ease-in-out',
     },
-    plugins: [Plugins.SwapAnimation],
-    // mirror: { constrainDimensions: true, },
   });
 
   // --- Draggable events --- //
