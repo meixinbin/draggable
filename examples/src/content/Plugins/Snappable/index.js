@@ -1,33 +1,27 @@
-import {Sortable, Plugins} from '../../../scripts/vendor/draggable';
+import {Swappable, Plugins} from '../../../scripts/vendor/draggable';
 
 export default function Snappable() {
-  const containers = document.querySelectorAll('#Snappable .BlockLayout');
+  const containerSelector = '#Snappable .BlockLayout';
+  const containers = document.querySelectorAll(containerSelector);
 
   if (containers.length === 0) {
     return false;
   }
 
-  const sortable = new Sortable(containers, {
-    draggable: '.Block--isDraggable',
+  const swappable = new Swappable(containers, {
+    appendTo: containerSelector,
     mirror: {
       constrainDimensions: true,
     },
-    plugins: [Plugins.SwapAnimation],
-    swapAnimation: {
-      duration: 200,
-      easingFunction: 'ease-in-out',
-    },
+    plugins: [Plugins.Snappable],
   });
 
   // --- Draggable events --- //
-  sortable.on('drag:start', evt => {
-    // MAX WILL UPDATE THE LIB TO HAVE A NEW CLASS I CAN HOOK INTO
-    evt.originalSource.classList.add('Block--isCloned');
+  swappable.on('drag:start', evt => {
+    if (evt.originalSource.classList.contains('Block--typeStripes')) {
+      evt.cancel();
+    }
   });
 
-  sortable.on('drag:stop', evt => {
-    evt.originalSource.classList.remove('Block--isCloned');
-  });
-
-  return sortable;
+  return swappable;
 }

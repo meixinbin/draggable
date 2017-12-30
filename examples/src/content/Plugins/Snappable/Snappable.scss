@@ -3,38 +3,17 @@
 /// Snappable
 ////
 
-@import 'content/shared/mixins';
-
-$snappable-block-name: unquote('Block');
-
 .Snappable {
-  @include draggable-source-layout($snappable-block-name, 1, 2, 4, 5, 7, 8) {
-    flex-basis: 50%;
-  }
-
-  @include draggable-source-layout($snappable-block-name, 3, 6, 9) {
-    flex-basis: 100%;
-  }
-
-  @media screen and (min-width: get-breakpoint(tablet)) {
-    @include draggable-source-layout($snappable-block-name, 1, 2, 3, 4, 5, 6, 7, 8, 9) {
-      flex-basis: 33.333%;
-    }
-  }
-
-  .BlockContent {
-    height: columns();
+  .BlockLayout--typeGrid {
+    grid-template-columns: repeat(2, 1fr);
 
     @media screen and (min-width: get-breakpoint(tablet)) {
-      height: columns() * 1.5;
+      grid-template-rows: repeat(4, columns() * 1.5);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media screen and (min-width: get-breakpoint(desktop)) {
-      height: columns(2);
-    }
-
-    @media screen and (min-width: get-breakpoint('1080p', wide)) {
-      height: columns() * 2.5;
+      grid-template-rows: repeat(4, columns(2));
     }
   }
 }
