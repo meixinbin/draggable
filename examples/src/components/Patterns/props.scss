@@ -13,9 +13,9 @@
 
 ///
 /// Halftone
-$halftone-bg-size: 1.2rem;
+$halftone-bg-placeholder-size: 1.2rem;
 
-@mixin halftone-bg($psuedo: before) {
+@mixin halftone-bg-placeholder($psuedo: before) {
   &::#{unquote($psuedo)} {
     @include position-cover;
     content: '';
@@ -28,8 +28,8 @@ $halftone-bg-size: 1.2rem;
 
 @mixin halftone-bg-animated($psuedo: before) {
   &::#{unquote($psuedo)} {
-    background-image: var(--halftone-bg);
-    background-size: $halftone-bg-size $halftone-bg-size;
+    background-image: var(--halftone-bg-placeholder);
+    background-size: $halftone-bg-placeholder-size $halftone-bg-placeholder-size;
     animation:
       halftone get-duration(slow) steps(3) infinite both,
       fade-in get-duration() get-easing() both;

@@ -14,11 +14,27 @@ export default function MultipleContainers() {
     },
   });
 
+  const containerTwo = document.getElementById('ContainerTwo');
+  const containerTwoCapacity = 3;
+  let currentMediumChildren;
   let lastOverContainer;
 
   // --- Draggable events --- //
   sortable.on('drag:start', evt => {
     evt.originalSource.classList.add('StackedListItem--isCloned');
+    currentMediumChildren = containerTwo.querySelectorAll('.StackedListItem').length;
+  });
+
+  // This suprisingly does not work...
+  sortable.on('drag:over', evt => {
+    if (currentMediumChildren !== containerTwoCapacity) {
+      return;
+    }
+
+    if (evt.overContainer === containerTwo) {
+      evt.cancel();
+      console.log('#ContainerTwo capacity reached:', currentMediumChildren);
+    }
   });
 
   sortable.on('sortable:sorted', evt => {

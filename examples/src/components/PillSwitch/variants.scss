@@ -6,10 +6,8 @@
 @import 'components/Patterns/props';
 
 .PillSwitch--isOn {
-  .PillSwitchTrack {
-    @include halftone-bg-animated;
-    background-color: white;
-    border-color: get-color(brand, blue);
+  .PillSwitchTrack::after {
+    opacity: 0;
   }
 
   .PillSwitchControl {

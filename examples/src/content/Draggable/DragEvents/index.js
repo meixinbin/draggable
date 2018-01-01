@@ -48,7 +48,6 @@ export default function DragEvents() {
 
     const containerRectQuarter = containerRect.width / 4;
     dragThreshold = isToggled ? containerRectQuarter * -1 : containerRectQuarter;
-
     headings = {
       source: evt.originalSource.querySelector('[data-switch-on]'),
       mirror: evt.mirror.querySelector('[data-switch-on]'),

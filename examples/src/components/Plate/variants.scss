@@ -45,6 +45,24 @@
   --middle-translate-y: 0;
   --top-translate-x: 0;
   --top-translate-y: 0;
+
+  &.draggable-container--placed {
+    .Plate--levelBottom,
+    .Plate--levelMiddle,
+    .Plate--levelTop {
+      animation-name: plate-placed;
+      animation-duration: get-duration();
+      animation-timing-function: get-easing();
+    }
+
+    .Plate--levelBottom {
+      animation-delay: get-duration() / 2;
+    }
+
+    .Plate--levelMiddle {
+      animation-delay: get-duration() / 4;
+    }
+  }
 }
 
 .Plate--isDraggable {

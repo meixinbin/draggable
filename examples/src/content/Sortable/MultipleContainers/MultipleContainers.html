@@ -2,7 +2,7 @@
 
 {% macro render(id) %}
   <section id="{{ id }}" class="{{ id }}">
-    <article class="StackedListWrapper StackedListWrapper--sizeLarge StackedListWrapper--axisHorizontal Container">
+    <article id="ContainerOne" class="StackedListWrapper StackedListWrapper--sizeLarge StackedListWrapper--axisHorizontal Container">
       <header class="StackedListHeader">
         <h3 class="Heading Heading--size3 Heading--colorWhite">Container one</h3>
       </header>
@@ -15,7 +15,7 @@
       </ul>
     </article>
 
-    <article class="StackedListWrapper StackedListWrapper--sizeMedium StackedListWrapper--hasScrollIndicator Container">
+    <article id="ContainerTwo" class="StackedListWrapper StackedListWrapper--sizeMedium StackedListWrapper--hasScrollIndicator Container">
       <header class="StackedListHeader">
         <h3 class="Heading Heading--size3 Heading--colorWhite">Container two</h3>
         <p><em>3 item capacity</em></p>
@@ -28,7 +28,7 @@
       </ul>
     </article>
 
-    <article class="StackedListWrapper StackedListWrapper--hasScrollIndicator Container">
+    <article id="ContainerThree" class="StackedListWrapper StackedListWrapper--hasScrollIndicator Container">
       <header class="StackedListHeader">
         <h3 class="Heading Heading--size3 Heading--colorWhite">Container three</h3>
       </header>

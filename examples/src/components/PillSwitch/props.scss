@@ -44,3 +44,8 @@ $pill-switch-data: (
   height: pill-switch(control-size, $breakpoint);
   border-radius: pill-switch(radius, $breakpoint);
 }
+
+@mixin pill-switch-border($width) {
+  // cannot use border as the psuedo elements will not overlap
+  box-shadow: inset 0 0 0 $width get-color(brand, blue);
+}

@@ -83,3 +83,14 @@
     transform: scale(1.0125, 0.98);
   }
 }
+
+@keyframes plate-placed {
+  0%,
+  100% {
+    color: get-color(coal, dark);
+  }
+
+  50% {
+    color: get-color(brand, blue);
+  }
+}

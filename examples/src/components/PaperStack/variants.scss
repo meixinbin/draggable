@@ -20,7 +20,7 @@
   cursor: get-cursor(drag);
 
   .PaperStackContent {
-    @include halftone-bg;
+    @include halftone-bg-placeholder;
     color: get-color(coal, dark);
     background-color: white;
     border-color: currentColor;
@@ -60,7 +60,7 @@
       color: white;
       background-color: get-color(brand, blue);
       border-color: get-color(brand, blue);
-      transform: paper-stack-item(transform) scale(0.925);
+      transform: paper-stack-item(transform) scale(1.025);
 
       &::after {
         content: none;

@@ -18,7 +18,7 @@
     height: paper-stack(height, tablet);
   }
 
-  @media screen and (min-width: get-breakpoint(desktop)) {
+  @media screen and (min-width: get-breakpoint('1080p', wide)) {
     width: paper-stack-item(width, desktop);
     height: paper-stack(height, desktop);
   }
@@ -46,7 +46,7 @@
     height: paper-stack-item(height, tablet);
   }
 
-  @media screen and (min-width: get-breakpoint(desktop)) {
+  @media screen and (min-width: get-breakpoint('1080p', wide)) {
     height: paper-stack-item(height, desktop);
   }
 }
@@ -61,7 +61,7 @@
     font-size: paper-stack-heading(size, tablet);
   }
 
-  @media screen and (min-width: get-breakpoint(desktop)) {
+  @media screen and (min-width: get-breakpoint('1080p', wide)) {
     font-size: paper-stack-heading(size, desktop);
   }
 }
@@ -85,7 +85,7 @@
       height: paper-stack-shadow(height, tablet);
     }
 
-    @media screen and (min-width: get-breakpoint(desktop)) {
+    @media screen and (min-width: get-breakpoint('1080p', wide)) {
       bottom: paper-stack-shadow(bottom, desktop);
       height: paper-stack-shadow(height, desktop);
     }
@@ -105,7 +105,7 @@
     @include paper-stack-item-offset(tablet);
   }
 
-  @media screen and (min-width: get-breakpoint(desktop)) {
+  @media screen and (min-width: get-breakpoint('1080p', wide)) {
     @include paper-stack-item-offset(desktop);
   }
 }

@@ -83,8 +83,8 @@ export default class Plate {
     const scaleX = calculatePlateScale(x, this.threshold.max, scaleFactor);
     const scaleY = calculatePlateScale(y, this.threshold.max, scaleFactor);
 
-    this.wrapper.style.setProperty(`--plate-scale-x`, `${scaleX}`);
-    this.wrapper.style.setProperty(`--plate-scale-y`, `${scaleY}`);
+    this.wrapper.style.setProperty('--plate-scale-x', `${scaleX}`);
+    this.wrapper.style.setProperty('--plate-scale-y', `${scaleY}`);
   }
 
   _translateEachPlate(x, y) {
@@ -102,7 +102,7 @@ export default class Plate {
   }
 
   _translateShadow(x, y) {
-    this.wrapper.style.setProperty(`--shadow-offset-x`, `${x / 2}px`);
-    this.wrapper.style.setProperty(`--shadow-offset-y`, `${y / 2}px`);
+    this.wrapper.style.setProperty('--shadow-offset-x', `${x / 2}px`);
+    this.wrapper.style.setProperty('--shadow-offset-y', `${y / 2}px`);
   }
 }
