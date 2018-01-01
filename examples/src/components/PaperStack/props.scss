@@ -32,7 +32,10 @@ $paper-stack-item: (
     tablet: 58rem,
     desktop: 78rem,
   ),
-  transform: perspective(90rem) rotateX(60deg),
+  transform: (
+    base: perspective(90rem) rotateX(60deg),
+    mirror: perspective(90rem) rotateX(58deg) scale(1.025),
+  ),
 );
 
 @function paper-stack-item($group: $threads-default-value, $variant: $threads-default-value) {

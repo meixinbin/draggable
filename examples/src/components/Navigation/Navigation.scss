@@ -59,6 +59,20 @@
 // Use .Link class?
 .NavLink {
   font-weight: get-type-scale(subheading, weight);
+  color: get-color(coal, light);
+
+  &.NavLink--isCurrent {
+    pointer-events: none;
+    color: get-color(purple);
+  }
+
+  &.NavLink--isDisabled {
+    pointer-events: none;
+    color: get-color(coal, light);
+  }
+}
+
+a.NavLink {
   color: get-color(ash, dark);
   transition: color get-duration() get-easing();
 
@@ -69,15 +83,5 @@
 
   &:active {
     color: get-color(purple, dark);
-  }
-
-  &.NavLink--isCurrent {
-    pointer-events: none;
-    color: get-color(purple);
-  }
-
-  &.NavLink--isDisabled {
-    pointer-events: none;
-    color: get-color(coal, light);
   }
 }

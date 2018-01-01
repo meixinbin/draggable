@@ -16,12 +16,20 @@
         {% set linkClasses = (
           linkClasses.push('NavLink--isCurrent') if ViewAttrs.child == Link, linkClasses
         ) %}
+        {% set linkClasses = linkClasses | join(' ') | trim %}
+
         {% if '~' in Link %}
-          {% set linkClasses = (linkClasses.push('NavLink--isDisabled'), linkClasses) %}
+          {% set openingTag = '<span class="' + linkClasses + '">' %}
+          {% set closingTag = '</span>' %}
+        {% else %}
+          {% set openingTag = '<a href="' + linkHref + '.html" class="' + linkClasses + '" title="See example: ' + Link + '">' %}
+          {% set closingTag = '</a>' %}
         {% endif %}
 
         <li class="NavItem">
-          <a href="{{ linkHref + '.html' }}" class="{{ linkClasses | join(' ') | trim }}" title="See example: {{ Link }}">{{ Link | replace('~', '') }}</a>
+          {{ openingTag | safe }}
+            {{ Link | replace('~', '') }}
+          {{ closingTag | safe }}
         </li>
       {% endfor %}
     </ul>
