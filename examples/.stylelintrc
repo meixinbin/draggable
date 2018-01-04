@@ -8,6 +8,7 @@
     "scss/double-slash-comment-empty-line-before": null,
     "declaration-property-value-blacklist": null,
     "font-weight-notation": null,
+    "function-url-scheme-whitelist": null,
     "no-duplicate-selectors": null,
     "no-unknown-animations": null,
     "selector-class-pattern": null,

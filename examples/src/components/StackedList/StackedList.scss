@@ -9,7 +9,7 @@
 @import 'components/Patterns/props';
 
 .StackedListWrapper {
-  @include stripes-loose-bg;
+  @include stripes-bg;
   position: relative;
   box-shadow: inset 0 0 0 get-border() get-color(coal, dark);
 }

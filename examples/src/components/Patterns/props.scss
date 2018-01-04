@@ -13,7 +13,7 @@
 
 ///
 /// Halftone
-$halftone-bg-placeholder-size: 1.2rem;
+$halftone-bg-size: 1.2rem;
 
 @mixin halftone-bg-placeholder($psuedo: before) {
   &::#{unquote($psuedo)} {
@@ -28,8 +28,8 @@ $halftone-bg-placeholder-size: 1.2rem;
 
 @mixin halftone-bg-animated($psuedo: before) {
   &::#{unquote($psuedo)} {
-    background-image: var(--halftone-bg-placeholder);
-    background-size: $halftone-bg-placeholder-size $halftone-bg-placeholder-size;
+    background-image: var(--halftone-bg);
+    background-size: $halftone-bg-size $halftone-bg-size;
     animation:
       halftone get-duration(slow) steps(3) infinite both,
       fade-in get-duration() get-easing() both;
@@ -40,17 +40,16 @@ $halftone-bg-placeholder-size: 1.2rem;
 
 ///
 /// Stripes
-$stripes-tight-bg-size: 0.4rem;
-$stripes-loose-bg-size: 0.8rem;
+$stripes-bg-size: 0.8rem;
 
-@mixin stripes-tight-bg {
-  background-image: var(--stripes-tight-bg);
-  background-color: white;
-  background-size: $stripes-tight-bg-size $stripes-tight-bg-size;
-}
-
-@mixin stripes-loose-bg {
-  background-image: var(--stripes-loose-bg);
-  background-color: white;
-  background-size: $stripes-loose-bg-size $stripes-loose-bg-size;
+@mixin stripes-bg {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    white,
+    white 40%,
+    var(--stripes-bg-color) 40%,
+    var(--stripes-bg-color) 50%,
+    white 50%
+  );
+  background-size: $stripes-bg-size $stripes-bg-size;
 }

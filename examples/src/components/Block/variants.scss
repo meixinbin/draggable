@@ -80,7 +80,7 @@
 
 .Block--typeStripes {
   .BlockContent {
-    @include stripes-loose-bg;
+    @include stripes-bg;
     border-color: get-color(coal, dark);
   }
 }
@@ -158,6 +158,17 @@ span:hover {
       right: 0;
       bottom: 0;
       left: 0;
+    }
+  }
+}
+
+///
+/// Collidable
+.Block--typeStripes {
+  &.isColliding {
+    .BlockContent {
+      --stripes-bg-color: get-color(brand, red);
+      border-color: get-color(brand, red);
     }
   }
 }
