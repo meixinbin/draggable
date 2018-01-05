@@ -109,6 +109,7 @@
   .CollidableWall {
     position: absolute;
     background-color: get-color(coal, dark);
+    transition: background-color get-duration() get-easing();
   }
 
   .CollidableWall--itemTop {
@@ -159,6 +160,24 @@
   .draggable-mirror {
     .BlockContent {
       transform: scale(0.9);
+    }
+  }
+
+  .draggable-container--is-dragging:not(.draggable-container--over) {
+    .Block--typeStripes {
+      .BlockContent {
+        color: get-color(brand, red);
+      }
+    }
+
+    .CollidableWall {
+      background-color: get-color(brand, red);
+    }
+  }
+
+  .CollidableWall {
+    &.isColliding {
+      background-color: get-color(brand, red);
     }
   }
 }

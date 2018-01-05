@@ -81,7 +81,9 @@
 .Block--typeStripes {
   .BlockContent {
     @include stripes-bg;
-    border-color: get-color(coal, dark);
+    color: get-color(coal, dark);
+    border-color: currentColor;
+    transition: color get-duration(fast) get-easing();
   }
 }
 
@@ -167,8 +169,7 @@ span:hover {
 .Block--typeStripes {
   &.isColliding {
     .BlockContent {
-      --stripes-bg-color: get-color(brand, red);
-      border-color: get-color(brand, red);
+      color: get-color(brand, red);
     }
   }
 }

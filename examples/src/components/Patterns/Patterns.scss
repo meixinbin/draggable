@@ -6,17 +6,17 @@
 @import './props';
 
 :root {
-  --stripes-bg-color: get-color(coal, dark);
+  --pattern-bg-color: white;
   --halftone-bg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path fill="#{get-color(brand, blue)}" d="M0 4v4c1.104 0 2-.895 2-2s-.896-2-2-2zm6-2c1.104 0 2-.895 2-2H4c0 1.105.896 2 2 2zm0 8c-1.104 0-2 .895-2 2h4c0-1.105-.896-2-2-2zm4-4c0 1.105.896 2 2 2V4c-1.104 0-2 .895-2 2z"/></svg>');
 }
 
 @keyframes halftone {
   from {
-    background-position: 0 0;
+    background-position: $halftone-bg-position-start;
   }
 
   to {
-    background-position: ($halftone-bg-size / 2) ($halftone-bg-size / 2);
+    background-position: $halftone-bg-position-end;
   }
 }
 
@@ -29,20 +29,3 @@
     opacity: 1;
   }
 }
-
-/*
-@keyframes thing {
-  0% {
-    background-position: 0px 0px;
-  }
-  100% {
-    background-position: 64px 64px;
-  }
-}
-
-div {
-  background: radial-gradient(red 25%, blue 0%) 16px 16px;
-  background-size: 32px 32px;
-  animation: thing 1s steps(4) infinite both;
-}
-*/

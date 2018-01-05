@@ -3,6 +3,8 @@ import {Droppable, Plugins} from '../../../scripts/vendor/draggable';
 export default function Collidable() {
   const containerSelector = '#Collidable .BlockLayout';
   const containers = document.querySelectorAll(containerSelector);
+  const wallClass = 'CollidableWall';
+  const walls = document.querySelectorAll(`.${wallClass}`);
 
   if (containers.length === 0) {
     return false;
@@ -21,11 +23,19 @@ export default function Collidable() {
 
   // --- Draggable events --- //
   droppable.on('collidable:in', ({collidingElement}) => {
-    collidingElement.classList.add('isColliding');
+    if (collidingElement.classList.contains(wallClass)) {
+      walls.forEach(wall => wall.classList.add('isColliding'));
+    } else {
+      collidingElement.classList.add('isColliding');
+    }
   });
 
   droppable.on('collidable:out', ({collidingElement}) => {
-    collidingElement.classList.remove('isColliding');
+    if (collidingElement.classList.contains(wallClass)) {
+      walls.forEach(wall => wall.classList.remove('isColliding'));
+    } else {
+      collidingElement.classList.remove('isColliding');
+    }
   });
 
   return droppable;
