@@ -1,28 +1,12 @@
 import {Sortable} from '../../../scripts/vendor/draggable';
-
-function matchMirrorDimensions(evt) {
-  evt.dragEvent.overContainer.appendChild(evt.dragEvent.mirror);
-
-  const overRect = evt.dragEvent.over.getBoundingClientRect();
-
-  evt.dragEvent.mirror.style.width = `${overRect.width}px`;
-  evt.dragEvent.mirror.style.height = `${overRect.height}px`;
-}
+import matchMirrorSize from '../../shared/match-mirror-size';
 
 function manageEmptyState(containers) {
   const emptyClass = 'draggable-container--is-empty';
 
   containers.forEach(container => {
     const countChildren = container.querySelectorAll('.StackedListItem').length;
-
-    console.log('container', container);
-    console.log('count', countChildren);
-
-    if (countChildren <= 1) {
-      container.classList.add(emptyClass);
-    } else {
-      container.classList.remove(emptyClass);
-    }
+    container.classList.toggle(emptyClass, countChildren <= 1);
   });
 }
 
@@ -70,7 +54,7 @@ export default function MultipleContainers() {
       return;
     }
 
-    matchMirrorDimensions(evt);
+    matchMirrorSize(evt.dragEvent);
     manageEmptyState(containers);
 
     lastOverContainer = evt.dragEvent.overContainer;
