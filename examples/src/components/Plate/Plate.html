@@ -26,10 +26,10 @@
 
     <div class="PlateContent">
       {% if options.heading %}
-        <h2 class="Heading Heading--size1 Heading--noSelect">{{ options.heading }}</h2>
+        <h2 class="Heading Heading--size1 text-no-select">{{ options.heading }}</h2>
       {% endif %}
 
-      <h3 class="Heading Heading--isHidden">{{ index }}</h3>
+      <h3 class="Heading visually-hidden">{{ index }}</h3>
     </div>
   {{ closingTag | safe }}
 {% endmacro %}

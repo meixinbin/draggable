@@ -1,5 +1,5 @@
 ////
-/// Utilities
+/// Utilities global
 /// Functions
 ////
 
@@ -45,4 +45,17 @@
   } @else {
     @return 0.2;
   }
+}
+
+// Column based max-width layout
+// @param {Number} $count - Number of columns this element should span
+@function columns($count: 1) {
+  @if type-of($count) != number or $count < 1 {
+    @error 'You did not provide a proper column count.';
+  }
+
+  $column-width: $count * get-layout-length(column);
+  $gutter-width: ($count - 1) * get-layout-length(gutter);
+
+  @return $column-width + $gutter-width;
 }

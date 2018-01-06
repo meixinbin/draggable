@@ -1,5 +1,5 @@
 ////
-/// Utilities
+/// Utilities shared
 /// Layout
 ////
 
@@ -196,19 +196,4 @@
     display: none;
     clear: none;
   }
-}
-
-///
-/// Functions
-
-// Column based max-width layout
-@function columns($count: 1) {
-  @if type-of($count) != number or $count < 1 {
-    @error 'You did not provide a proper column count.';
-  }
-
-  $column-width: $count * get-layout-length(column);
-  $gutter-width: ($count - 1) * get-layout-length(gutter);
-
-  @return $column-width + $gutter-width;
 }

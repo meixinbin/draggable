@@ -1,5 +1,31 @@
 import {Sortable} from '../../../scripts/vendor/draggable';
 
+function matchMirrorDimensions(evt) {
+  evt.dragEvent.overContainer.appendChild(evt.dragEvent.mirror);
+
+  const overRect = evt.dragEvent.over.getBoundingClientRect();
+
+  evt.dragEvent.mirror.style.width = `${overRect.width}px`;
+  evt.dragEvent.mirror.style.height = `${overRect.height}px`;
+}
+
+function manageEmptyState(containers) {
+  const emptyClass = 'draggable-container--is-empty';
+
+  containers.forEach(container => {
+    const countChildren = container.querySelectorAll('.StackedListItem').length;
+
+    console.log('container', container);
+    console.log('count', countChildren);
+
+    if (countChildren <= 1) {
+      container.classList.add(emptyClass);
+    } else {
+      container.classList.remove(emptyClass);
+    }
+  });
+}
+
 export default function MultipleContainers() {
   const containers = document.querySelectorAll('#MultipleContainers .Container');
 
@@ -22,7 +48,9 @@ export default function MultipleContainers() {
   // --- Draggable events --- //
   sortable.on('drag:start', evt => {
     evt.originalSource.classList.add('StackedListItem--isCloned');
+    // this is inefficient and should be shared with my manageEmptyState code
     currentMediumChildren = containerTwo.querySelectorAll('.StackedListItem').length;
+    lastOverContainer = evt.sourceContainer;
   });
 
   // This suprisingly does not work...
@@ -42,12 +70,8 @@ export default function MultipleContainers() {
       return;
     }
 
-    evt.dragEvent.overContainer.appendChild(evt.dragEvent.mirror);
-
-    const overRect = evt.dragEvent.over.getBoundingClientRect();
-
-    evt.dragEvent.mirror.style.width = `${overRect.width}px`;
-    evt.dragEvent.mirror.style.height = `${overRect.height}px`;
+    matchMirrorDimensions(evt);
+    manageEmptyState(containers);
 
     lastOverContainer = evt.dragEvent.overContainer;
   });

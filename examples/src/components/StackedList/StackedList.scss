@@ -3,9 +3,11 @@
 /// StackedList
 ////
 
-@import 'utilities/layout';
+@import 'utilities/shared/layout';
+@import 'utilities/shared/typography';
 @import './props';
 @import 'components/Handle/props';
+@import 'components/Heading/props';
 @import 'components/Patterns/props';
 
 .StackedListWrapper {
@@ -39,15 +41,27 @@
 }
 
 .StackedList {
+  position: relative;
   margin-top: -(get-border());
 
-/*
-  // How do you allow items to be moved back into an emptied container?
-  min-width: stacked-list-item();
-  min-height: stacked-list-item();
-  box-shadow: inset 0 0 0 get-border() get-color(coal);
-  background-color: get-color(ash);
-*/
+  &:empty {
+    &::before {
+      @include position-cover;
+
+      @include Heading;
+      @include HeadingSize4;
+      @include text-no-select;
+
+      content: 'drag to container';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 80%;
+      height: 80%;
+      background-color: white;
+    }
+  }
 }
 
 .StackedListItem {

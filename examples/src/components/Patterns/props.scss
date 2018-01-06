@@ -3,7 +3,7 @@
 /// Pattern props
 ////
 
-@import 'utilities/layout';
+@import 'utilities/shared/layout';
 
 @mixin pattern-bg-reset {
   background-image: none;

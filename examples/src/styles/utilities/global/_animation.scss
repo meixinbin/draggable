@@ -1,5 +1,5 @@
 ////
-/// Utilities
+/// Utilities global
 /// Animation
 ////
 
@@ -91,14 +91,4 @@
    50% { transform: translate3d(-1rem, 0, 0); }
    75% { transform: translate3d(0.4rem, 0, 0); }
   100% { transform: translate3d(0, 0, 0); }
-}
-
-///
-/// Common animation mixins
-@mixin breathe {
-  animation: breathe get-duration(slower) get-duration(fast) get-easing() alternate infinite both;
-}
-
-@mixin pop-animation {
-  animation: pop get-duration() get-easing(excite) both;
 }

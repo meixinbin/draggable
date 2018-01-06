@@ -1,5 +1,5 @@
 ////
-/// Utilities
+/// Utilities shared
 /// Typography
 ////
 
@@ -15,6 +15,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+// For preventing any text selection.
+@mixin text-no-select {
+  pointer-events: none;
+  user-select: none;
 }
 
 // A better way to achieve `text-decoration: underline;` (allows for transitions)
@@ -50,41 +56,5 @@
     &::before {
       opacity: 1;
     }
-  }
-}
-
-///
-/// Typography classes
-.text-truncate {
-  @include text-truncate;
-}
-
-.text-truncate--inline-block {
-  @include text-truncate('inline-block');
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-underline {
-  text-decoration: underline
-}
-
-.text-nowrap {
-  white-space: nowrap;
-}
-
-.text-wrap {
-  white-space: normal;
-  word-wrap: break-word;
-  word-break: break-word;
-}
-
-.line-break--tablet-up {
-  display: none;
-
-  @media screen and (min-width: get-breakpoint(mobile, wide)) {
-    display: block;
   }
 }
