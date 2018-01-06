@@ -6,8 +6,10 @@
 @import 'components/Patterns/props';
 
 .PillSwitch--isOn {
-  .PillSwitchTrack::after {
-    opacity: 0;
+  .PillSwitchTrack {
+    &::after {
+      opacity: 0;
+    }
   }
 
   .PillSwitchControl {

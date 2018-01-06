@@ -26,13 +26,15 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  // halftone is always animated and blue to mitigate slight transition inconsistency...
+  // ::after overlays it so its fine
+  color: get-color(brand, blue);
   background-color: white;
   transform: rotate(-45deg);
   overflow: hidden;
 
   @include halftone-bg-placeholder;
   @include halftone-bg-animated {
-    // restore dots animating diagonally
     height: pill-switch(size);
     transform: rotate(45deg);
 
@@ -43,12 +45,12 @@
 
   &::after {
     content: '';
-    display: block;
     position: absolute;
     top: -(get-border());
     right: -(get-border());
     bottom: -(get-border());
     left: -(get-border());
+    display: block;
     background-color: get-color(coal, dark);
     transition: opacity get-duration(fast) get-easing();
   }
