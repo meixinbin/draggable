@@ -12,25 +12,25 @@ export const extAllViews = '*.+(html|njk|json|md)';
 
 export function views() {
   const nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader('src'));
-  const navData = JSON.parse(fs.readFileSync('src/components/Navigation/data.json'));
+  const dataPages = JSON.parse(fs.readFileSync('src/views/data-pages.json'));
 
   return gulp
     .src(`${srcViews}${extViews}`)
-    .pipe(data(() => navData))
+    .pipe(data(() => dataPages))
     .pipe(
       gulpjucks.compile(
         {},
         {
           env: nunjucksEnv,
-        }
-      )
+        },
+      ),
     )
     .pipe(
       htmlmin({
         minifyJS: true,
         removeComments: true,
         collapseWhitespace: true,
-      })
+      }),
     )
     .pipe(gulp.dest(distViews));
 }

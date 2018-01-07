@@ -1,4 +1,4 @@
-{% macro render(SubNav, ViewAttrs) %}
+{% macro render(ViewAttrs, SubNav) %}
   {% for Section, Links in SubNav %}
     {% set listClasses = ['NavList'] %}
     {% set listClasses = (

@@ -19,7 +19,7 @@ export default function initPlugins() {
       analyzerMode: 'static',
       openAnalyzer: false,
       reportFilename: '../../../bundle-report.html',
-    })
+    }),
   );
 
   return PLUGINS;
