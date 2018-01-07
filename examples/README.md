@@ -24,7 +24,7 @@ This project uses a co-located component structure, meaning everything relating 
 
 The root directory contains many config files that you can safely ignore unless you aim to change how files are compiled. It is strongly recommended to read the `package.json` to familiarize yourself with the available `scripts`.
 
-### Views
+### `src/views`
 
 This folder contains the top-level page templates. The project uses Nunjucks for a templating language.
 
@@ -34,23 +34,23 @@ There is only one layout template, `views/templates/document.html`, which is ext
 2. Define the `ViewAttrs` for the view _(Page title, description, etc)_.
 3. Import and render the content component for that view.
 
-### Styles
+### `src/styles`
 
 This is where “global” styles, along with the `app.scss` manifest are located. There shouldn’t be much reason to alter any of these files other than adding new imports to `app.scss`.
 
 This project uses [Threads](https://github.com/beefchimi/threads) to manage style properties. You can see all of the Threads theme values in `styles/themes/examples`.
 
-### Scripts
+### `src/scripts`
 
 Just like with `styles/`, this is where our “global” scripts, along with the `app.js` entry script is located. There shouldn’t be much reason to alter any of these files other than adding new imports and initializations to `app.js`.
 
-### Content
+### `src/content`
 
 This folder contains all the “content components”, which means all the code specific to an individual Example. Content is grouped by the “example type”: `Draggable`, `Droppable`, `Sortable`, `Swappable`, or `Plugins`. There is also a `Home` folder just for the landing page, and a `shared` folder for common functions and mixins that are reused across multiple content components.
 
 Each individual example will have a single `.html` view, `.scss` file, and a `index.js`. The `index.js` is where you will initialize and author any `draggable` logic. The default function exported from each `index.js` file is imported and initialized in the `src/scripts/app.js` entry file.
 
-### Components
+### `src/components`
 
 Here are all of the shared components, such as the `Block` component, used in many examples as draggable elements.
 
@@ -64,7 +64,11 @@ That will render all of the markup for a `Block` component, using the string `on
 
 Some components will also have their own JavaScript logic, such as `Plate`, which manages how the `Plate` component gets transformed via a drag event.
 
-### Tools
+### `src/root`
+
+This folder simply contains any files that need to be copied to the root `dist/` folder, such as a `manifest.json` or `.htaccess`. There should be no reason to alter files in this folder.
+
+### `tools`
 
 All of the build scripts are found in this folder. You shouldn’t need to go in here unless you want to change how the code is compiled.
 
@@ -79,10 +83,6 @@ You may find it useful to change how Webpack generates the JavaScript bundles. F
     - (optional) Disable minification by removing the Uglify entry.
 5. Open `src/components/Document/Head.html`.
 6. Remove both the `runtime` and `vendor` scripts.
-
-### Root
-
-This folder simply contains any files that need to be copied to the root `dist/` folder, such as a `manifest.json` or `.htaccess`. There should be no reason to alter files in this folder.
 
 ## Running a server / watching files
 
