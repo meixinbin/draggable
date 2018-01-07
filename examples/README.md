@@ -1,4 +1,4 @@
-# Developer Examples
+![banner-examples](https://user-images.githubusercontent.com/643944/34655498-c9701942-f3d8-11e7-9dd5-6d225e7c5f6f.png)
 
 > The Examples site has been made available to aid developers interested in building web apps with Draggable and/or contributing back to the library.
 
